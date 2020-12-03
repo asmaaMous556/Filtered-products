@@ -1,0 +1,29 @@
+<div class="list-group">
+    <a routerLink="/product-card"
+    class="list-group-item list-group-item-action"
+    > الكل </a> 
+
+<a 
+ routerLink="/product-card" 
+ [queryParams]="{category : [category.nameAr]}"
+ *ngFor="let category of categories" 
+(click)="getSubcategory(category.nameAr)"
+ class="list-group-item"
+>
+{{category.nameAr}}
+</a>
+ </div>
+ 
+
+  <div class="list">
+  <a routerLink="/product-card"
+  *ngFor="let subcategory of subCategories"
+  (click)="setQueryParam(subcategory.nameAr)"
+ class="list-group-item "
+ >{{subcategory.nameAr}}
+ </a> 
+</div>
+ 
+
+ <!-- [class.active]="category === c.key " -->
+
